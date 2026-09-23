@@ -13,7 +13,7 @@ volumes:
 
 containers:
   - name: "workspace"
-    image: "ghcr.io/tinfoilsh/confidential-debian@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    image: "ghcr.io/tinfoilsh/confidential-debian@sha256:eacec91f14a69c3ddd7d51d51f1987f7df3b9ca20dbdfb7e594dced887a43eb9" # v0.1.0
     restart: on-failure
     cvm_admin: true
     stop_signal: SIGRTMIN+3
