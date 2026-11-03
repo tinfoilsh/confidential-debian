@@ -13,8 +13,11 @@ umask 022
 echo workspace > /etc/hostname
 hostname workspace
 
-key=/etc/ssh/ssh_host_ed25519_key
-[[ -f $key ]] || ssh-keygen -q -t ed25519 -N '' -f "$key"
+key=/etc/ssh/ssh_host_ecdsa_key
+attested=/run/tinfoil/keys/host-ssh/private_key.pem
+[[ -f $attested ]] || fail 'attested host-ssh key is missing'
+install -m 0600 "$attested" "$key"
+ssh-keygen -yf "$key" > "$key.pub"
 printf 'confidential-debian: host key %s\n' "$(ssh-keygen -lf "$key.pub")"
 
 ldconfig  # pick up the driver libs the nvidia runtime mounts in

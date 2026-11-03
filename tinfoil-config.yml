@@ -3,9 +3,16 @@ cpus: 16
 memory: 65536
 gpus: 1
 
+cvm-network:
+  inbound-ports: [22]
+
 networks:
   dev:
     egress: open
+
+attested-keys:
+  - id: host-ssh
+    key: ecdsa-p256
 
 volumes:
   - name: workspace
@@ -21,6 +28,7 @@ containers:
     stop_signal: SIGRTMIN+3
     stop_timeout: 120
     networks: [dev]
+    keys: [host-ssh]
     persistent_volumes: [workspace:/mnt/disk]
 
     ports: ["22:22"]
