@@ -13,7 +13,7 @@ volumes:
 
 containers:
   - name: "workspace"
-    image: "ghcr.io/tinfoilsh/confidential-debian@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    image: "ghcr.io/tinfoilsh/confidential-debian@sha256:006b94dec2e15a21b0827dab6918c344d0f7f2bc7b9c6767f946528147bcdf00" # v0.2.0
     runtime: nvidia
     gpus: all
     restart: on-failure
