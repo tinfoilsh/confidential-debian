@@ -1,7 +1,10 @@
 cvm-version: 0.14.17
-cpus: 16
-memory: 65536
-gpus: 1
+cpus: 32
+memory: 524288
+gpus: 8
+
+security:
+  allow-unencrypted-nvlink: true
 
 cvm-network:
   inbound-ports: [22]
