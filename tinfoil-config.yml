@@ -1,7 +1,7 @@
-cvm-version: 0.14.8
-cpus: 4
-memory: 8192
-gpus: 0
+cvm-version: 0.14.17
+cpus: 16
+memory: 65536
+gpus: 1
 
 networks:
   dev:
@@ -14,6 +14,8 @@ volumes:
 containers:
   - name: "workspace"
     image: "ghcr.io/tinfoilsh/confidential-debian@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    runtime: nvidia
+    gpus: all
     restart: on-failure
     cvm_admin: true
     stop_signal: SIGRTMIN+3

@@ -5,7 +5,7 @@ FROM ${BASE_IMAGE}
 ENV container=docker LANG=en_US.UTF-8
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-      ca-certificates curl less procps iproute2 locales util-linux \
+      ca-certificates curl less procps iproute2 locales util-linux pciutils \
       openssh-server \
       systemd systemd-sysv dbus dbus-user-session libpam-systemd \
     && sed -i 's/^# *en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen && locale-gen \
