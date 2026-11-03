@@ -17,4 +17,5 @@ key=/etc/ssh/ssh_host_ed25519_key
 [[ -f $key ]] || ssh-keygen -q -t ed25519 -N '' -f "$key"
 printf 'confidential-debian: host key %s\n' "$(ssh-keygen -lf "$key.pub")"
 
+ldconfig  # pick up the driver libs the nvidia runtime mounts in
 exec /sbin/init

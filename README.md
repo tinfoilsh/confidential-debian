@@ -1,3 +1,3 @@
 # confidential-debian
 
-A Debian 13 workspace running as root inside a Tinfoil confidential VM and reached over SSH.
+A Debian 13 workspace running as root with one NVIDIA GPU inside a Tinfoil confidential VM, reached over SSH.
