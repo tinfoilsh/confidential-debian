@@ -14,10 +14,6 @@ attested-keys:
   - id: host-ssh
     key: ecdsa-p256
 
-volumes:
-  - name: workspace
-    exec: true
-
 containers:
   - name: "workspace"
     image: "ghcr.io/tinfoilsh/confidential-debian@sha256:0000000000000000000000000000000000000000000000000000000000000000"
@@ -29,7 +25,6 @@ containers:
     stop_timeout: 120
     networks: [dev]
     keys: [host-ssh]
-    persistent_volumes: [workspace:/mnt/disk]
 
     ports: ["22:22"]
 
